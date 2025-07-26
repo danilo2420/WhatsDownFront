@@ -1,0 +1,128 @@
+@import '../global.css';
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    padding: 28.5px 24px;
+    
+    border-radius: 15px;
+    background: radial-gradient(var(--gradient0), var(--gradient1));
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 24px;
+}
+
+.title {
+    color: var(--white);
+}
+
+.input {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input__username, .input__password, .input__passwordConfirm {
+    color: var(--white);
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.buttons {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.buttons__btnSignup {
+    all: unset;
+    padding: 16px 24px;
+    width: 100%;
+    box-sizing: border-box;
+
+    border-radius: 24px;
+    background-color: var(--orange500);
+    color: var(--black);
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 1.87px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: background-color 0.15s;
+}
+
+.buttons__btnSignup:hover,
+.buttons__btnSignup:focus {
+    background-color: var(--orange500-hover);
+}
+
+.buttons__btnGoBack {
+    all: unset;
+    padding: 16px 24px;
+    width: 100%;
+    box-sizing: border-box;
+
+    border-radius: 24px;
+    background-color: var(--grey700);
+    color: var(--white);
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 1.87px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: background-color 0.15s;
+}
+
+.buttons__btnGoBack:hover,
+.buttons__btnGoBack:focus {
+    background-color: var(--grey700-hover);
+}
+
+input {
+    all: unset;
+    padding: 16px;
+
+    border-radius: 15px;
+    background-color: var(--grey700);
+}
+
+@media (min-width: 450px) {
+    .container {
+        width: 350px;
+        padding: 32px;
+        gap: 32px;
+        border-radius: 24px;
+    }
+
+    .buttons__btnSignup, .buttons__btnGoBack {
+        width: 150px;
+    }
+}

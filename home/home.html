@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="home.css">
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script defer src="home.js"></script>
+</head>
+<body onresize="reset()">
+    <!-- MOBILE MENU -->
+    <div class="mobileMenu">
+        <div class="mobileMenu__topSection">
+            <div class="mobileMenu__topSection__title tp1">Contacts</div>
+            <div class="mobileMenu__topSection__options">
+                <img 
+                    src="../assets/icons/burger.svg"
+                    class="mobileMenu__topSection__options__item"
+                    onclick="toggleBurgerMenu(event)">
+                <img 
+                    src="../assets/icons/exit.svg"
+                    class="mobileMenu__topSection__options__item mobileExit">
+            </div>
+        </div>
+        <div class="mobileMenu__contacts">
+            <!-- TODO: make this appear dynamically as well -->
+
+
+            <!--
+            <div class="mobileMenu__contacts__item">Isabel</div>
+            <div class="mobileMenu__contacts__item">Helen</div>
+            <div class="mobileMenu__contacts__item">Irene</div>
+            -->
+        </div>
+    </div>
+
+    <!-- SIDE MENU -->
+    <div class="sidenav">
+        <div class="sidenav__topSection tp2">
+            <div class="sidenav__topSection__title">WhatsDown</div>
+            <img 
+                src="../assets/icons/exit.svg" 
+                class="sidenav__topSection__exit"
+                alt="Exit"
+                onclick="logOut()">
+        </div>
+        <div class="sidenav__contacts">
+            <!-- Sample structure for contacts
+            <div class="sidenav__contacts__item">Isabel</div>
+            <div class="sidenav__contacts__item">Helen</div>
+            <div class="sidenav__contacts__item">Irene</div>
+            -->
+        </div>
+    </div>
+    
+    <!-- MAIN SECTION -->
+    <div class="main">
+        <!-- Top section -->
+        <div class="main__topSection">
+            <div class="main__topSection__contactName tp1"></div>
+            <img 
+                src="../assets/icons/burger.svg"
+                class="main__topSection__burgerMenu mobileBurger"
+                onclick="toggleBurgerMenu(event)">
+        </div>
+
+        <!-- Middle section -->
+        <div class="main__middleSection main__middleSection--welcome">
+            <!-- NOTE: messages are displayed in reverse due to flex-direction: column-reverse -->
+            <!-- Sample structure for messages
+             <div class="main__middleSection__item">
+                <div class="main__middleSection__item__content">Hello</div>
+            </div>
+            <div class="main__middleSection__item message--user">
+                <div class="main__middleSection__item__content">Hi</div>
+            </div>
+            <div class="main__middleSection__item">
+                <div class="main__middleSection__item__content">Whatsup</div>
+            </div>
+            -->
+            <div class="main__middleSection__welcome">
+                <img
+                    class="main__middleSection__welcome__icon" 
+                    src="../assets/icons/coffee.svg" 
+                    alt="Coffee">
+                <!--<div class="main__middleSection__welcome__icon">Icon here or something</div>-->
+                <div class="main__middleSection__welcome__text">
+                    <div class="main__middleSection__welcome__text__title tp1">Welcome</div>
+                    <div class="main__middleSection__welcome__text__subtitle tp3">Let's choose someone to talk to!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom section -->
+        <div class="main__bottomSection">
+            <input type="text" class="main__bottomSection__input">
+            <div class="main__bottomSection__button" onclick="sendMessage(event)">
+                <img 
+                    src="../assets/icons/arrow-up.svg"
+                    class="main__bottomSection__button__icon send--disabled">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    font-family: Overpass, Arial, Helvetica, sans-serif;
+    background-color: var(--grey950);
+    color: var(--white);
+}
+
+:root {
+    /* Colors */
+    --white: #e6e6e6;
+    --off-white: #f5f5f5;
+    --black: #000;
+
+    --grey950: #131518;
+    --grey900: #262E38;
+    --grey700: #28303a;
+    --grey700-hover: #333a46;
+    --grey500: #969FAD;
+
+    --orange500: #FC7614;
+    --orange500-hover: #b45613;
+
+    --gradient0: #232A34;
+    --gradient1: #181E27;
+    --gradient-hover: #333e4d;
+}
+
+/* Typographies */
+.tp1 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: 0px;
+}
+
+.tp2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0px;
+}
+
+.tp3 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+}
+
+.tp4 {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+}
+
+.tp4--bold {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 2px;
+}
+
+.tp5 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0px;
+}
+
+.tp5--semibold {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.17px;
+}
+
+.tp5--bold {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 1.87px;
+}
+
+/* Shared elements */

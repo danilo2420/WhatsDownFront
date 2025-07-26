@@ -1,0 +1,259 @@
+@import '../global.css';
+
+body {
+    display: flex;
+}
+
+.sidenav {
+    width: 300px;
+    background-color: var(--grey700);
+
+    /* Change this to switch from mobile to desktop */ 
+    display: none;
+}
+
+/* MOBILE MENU */ 
+.mobileMenu {
+    position: absolute;
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 100;
+    background-color: var(--grey950);
+
+    /* This toggles the menu on and off */ 
+    display: none; 
+}
+
+.mobileMenu__topSection {
+    padding: 16px 24px;
+    width: 100vw;
+    height: 68px;
+    box-sizing: border-box;
+    position: fixed;
+
+    background-color: var(--grey700);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobileMenu__topSection__options {
+    display: flex;
+    align-content: center;
+    gap: 24px;
+}
+
+.mobileMenu__topSection__options__item {
+    width: 20px;
+}
+
+.mobileMenu__contacts {
+    margin-top: 68px;
+    padding: 16px;
+    padding-bottom: 32px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mobileMenu__contacts__item {
+    padding: 16px;
+    border-radius: 15px;
+    background: radial-gradient(var(--gradient0), var(--gradient1));
+}
+
+
+/* MAIN SECTION */
+.main {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.main__topSection {
+    padding: 16px 24px;
+    min-height: 40px;
+
+    background: radial-gradient(var(--gradient0), var(--gradient1));
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main__topSection__burgerMenu {
+    width: 20px;
+}
+
+/* Messages */
+.main__middleSection {
+    flex: 1;
+    flex-basis: 0;
+    overflow-y: scroll;
+    padding-bottom: 24px;
+    padding-top: 24px;
+
+    display: flex;
+    flex-direction: column-reverse;
+
+    position: relative;
+}
+
+.main__middleSection__welcome {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.main__middleSection__welcome__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.main__middleSection__welcome__icon {
+    width: 120px;
+}
+
+.main__middleSection__item {
+    padding: 15px 24px;
+}
+
+.main__middleSection__item__content {
+    width: fit-content;
+    padding: 10px 24px;
+
+    border-radius: 15px;
+    background-color: var(--grey700);
+}
+
+.message--user {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/* Input */
+.main__bottomSection {
+    padding: 24px 24px;
+
+    background: radial-gradient(var(--gradient0), var(--gradient1));
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.main__bottomSection__input {
+    all: unset;
+
+    flex: 1;
+
+    background-color: var(--grey700);
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.main__bottomSection__button {
+    width: 40px;
+    height: 40px;
+    background-color: var(--grey700);
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__bottomSection__button__icon {
+    width: 25px;
+}
+
+/*** DESKTOP VERSION */
+@media (min-width: 700px) {
+    .main__topSection__burgerMenu {
+        visibility: hidden;
+    }
+
+    .sidenav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidenav__topSection {
+        padding: 16px 24px;
+        height: 68px;
+        box-sizing: border-box;
+
+        background-color: var(--grey900);
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .sidenav__topSection__exit {
+        width: 20px;
+        cursor: pointer;
+    }
+
+    .sidenav__contacts {
+        padding: 16px;
+        padding-bottom: 32px;
+        box-sizing: border-box;
+
+        height: calc(100vh - 68px);
+
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        overflow-y: scroll;
+    }
+
+    .sidenav__contacts__item {
+        padding: 16px;
+        border-radius: 15px;
+        background: radial-gradient(var(--gradient0), var(--gradient1));
+
+        transition: background-color 0.3s;
+    }
+
+    .sidenav__contacts__item:hover,
+    .sidenav__contacts__item:focus {
+        background: var(--gradient-hover);
+    }
+
+}
+
+/* MODIFIERS */
+.main__middleSection--welcome {
+    background: radial-gradient(#2a3138, #242a33);
+}
+
+.input--disabled {
+    /* TODO: style this */
+    opacity: 0.5;
+}
+
+.button--disabled {
+    opacity: 0.5;
+}
