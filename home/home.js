@@ -47,7 +47,7 @@ function checkToken() {
         if (data.message != 'success') {
             // If token is not valid, show message and throw user out
             alert(data.message);
-            window.location.href = '/'; 
+            window.location.href = '/WhatsDownFront'; 
         } else {
             // If token is valid, set user data in sessionStorage
             if (data.user_id)
