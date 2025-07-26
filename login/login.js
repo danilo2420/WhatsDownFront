@@ -19,7 +19,7 @@ function main() {
     // Login logic
     btnLogin.addEventListener('click', handleLogin);
     // Go to register view
-    btnRegister.addEventListener('click', () => window.location.href = '/register/register.html');
+    btnRegister.addEventListener('click', () => window.location.href = '/WhatsDownFront/register/register.html');
 }
 
 function testBackend() {
@@ -48,7 +48,7 @@ function redirectIfLoggedin() {
         return response.json()
     }).then((data) => {
         if (data.message == 'success')
-            window.location.href = '/home/home.html';
+            window.location.href = '/WhatsDownFront/home/home.html';
         else 
             localStorage.removeItem('token');
     }).catch((error) => {
@@ -90,7 +90,7 @@ function handleLogin() {
 
         if (data.message == 'success') {
             localStorage.setItem('token', data.token);
-            document.location.href = '/home/home.html';
+            document.location.href = '/WhatsDownFront/home/home.html';
         } else if (data.message == 'error') {
             alert(data.content);
         }

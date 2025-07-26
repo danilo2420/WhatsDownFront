@@ -59,7 +59,7 @@ function checkToken() {
         // Throw user out if there's an error
         alert('There was an error');
         console.log(error);
-        window.location.href = '/';
+        window.location.href = '/WhatsDownFront';
     });
 }
 
@@ -214,7 +214,7 @@ function reset() {
 
 function logOut() {
     localStorage.removeItem('token');
-    window.location.href = '/';
+    window.location.href = '/WhatsDownFront';
 }
 
 function toggleBurgerMenu(event) {

@@ -14,7 +14,7 @@ function main() {
     // Handle user creation logic
     btnSignup.addEventListener('click', handleSignup);
     // Go back to login
-    btnGoBack.addEventListener('click', () => window.location.href = '/index.html');
+    btnGoBack.addEventListener('click', () => window.location.href = '/WhatsDownFront/index.html');
 }
 
 function handleSignup() {
@@ -43,7 +43,7 @@ function handleSignup() {
         if (data.message == 'success') {
             alert('User created successfully');
             passUserInfoToLogin(username, password);
-            window.location.href = '/index.html';
+            window.location.href = '/WhatsDownFront/index.html';
         } else if(data.message == 'error') {
             alert(data.content);
         }
