@@ -254,6 +254,7 @@ function sendMessage(event) {
 
     inputMessage.value = '';
 }
+btnSendMessage.addEventListener('click', sendMessage);
 
 // OTHERS
 
