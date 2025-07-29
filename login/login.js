@@ -49,8 +49,10 @@ function redirectIfLoggedin() {
     }).then((response) => {
         return response.json()
     }).then((data) => {
-        if (data.message == 'success')
-            window.location.href = URLs.home;
+        if (data.message == 'success') {
+            //window.location.href = URLs.home;
+            console.log(URLs.home);
+        }
         else 
             localStorage.removeItem('token');
     }).catch((error) => {
