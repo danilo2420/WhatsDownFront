@@ -238,7 +238,7 @@ function toggleBurgerMenu(event) {
             'none';
     }
 }
-burgerMenu.addEventListener('click', toggleBurgerMenu);
+burgerMenu.addEventListener('click', (event) => toggleBurgerMenu(event));
 
 function sendMessage(event) {
     if (!sendEnabled) return;
