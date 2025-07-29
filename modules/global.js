@@ -7,7 +7,7 @@ if (production) {
     URLs = {
         login: "/",
         register: "/WhatsDownFront/register/register.html",
-        home: "/WhatsDownFront/home.html"
+        home: "/WhatsDownFront/home/home.html"
     }
 } else {
     URLs = {
