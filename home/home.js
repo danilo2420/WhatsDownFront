@@ -1,4 +1,7 @@
+import { URLs } from "../global.js";
+
 // Elements
+const elmntBody = document.querySelector('body');
 const sidenavContacts = document.querySelector('.sidenav__contacts');
 const mobileMenu = document.querySelector('.mobileMenu');
 const mobileMenuContacts = document.querySelector('.mobileMenu__contacts');
@@ -6,6 +9,8 @@ const inputMessage = document.querySelector('.main__bottomSection__input');
 const btnSendMessage = document.querySelector('.main__bottomSection__button');
 const contactName = document.querySelector('.main__topSection__contactName');
 const messageContainer = document.querySelector('.main__middleSection');
+const exitIcon = document.getElementById('logOutImage');
+const burgerMenu = document.getElementById('burgerMenu');
 
 const middleSection = document.querySelector('.main__middleSection');
 const welcomeView = document.querySelector('.main__middleSection__welcome');
@@ -47,7 +52,7 @@ function checkToken() {
         if (data.message != 'success') {
             // If token is not valid, show message and throw user out
             alert(data.message);
-            window.location.href = '/WhatsDownFront'; 
+            window.location.href = URLs.login; 
         } else {
             // If token is valid, set user data in sessionStorage
             if (data.user_id)
@@ -59,7 +64,7 @@ function checkToken() {
         // Throw user out if there's an error
         alert('There was an error');
         console.log(error);
-        window.location.href = '/WhatsDownFront';
+        window.location.href = URLs.login;
     });
 }
 
@@ -169,7 +174,7 @@ function setRoomMessagesInDOM(user) {
     }).then((data) => {
         if (!data.messages) return;
         // Add them to DOM
-        for (message of data.messages) {
+        for (const message of data.messages) {
             addNextMessage(message.sender_id, message.content);
         }
     }).catch((error) => {
@@ -211,11 +216,13 @@ main();
 function reset() {
     if (window.innerWidth >= 700) toggleBurgerMenu();
 }
+elmntBody.addEventListener('resize', reset);
 
 function logOut() {
     localStorage.removeItem('token');
-    window.location.href = '/WhatsDownFront';
+    window.location.href = URLs.login;
 }
+exitIcon.addEventListener('click', logOut);
 
 function toggleBurgerMenu(event) {
     if (!event) {
@@ -229,6 +236,7 @@ function toggleBurgerMenu(event) {
             'none';
     }
 }
+burgerMenu.addEventListener('click', toggleBurgerMenu);
 
 function sendMessage(event) {
     if (!sendEnabled) return;

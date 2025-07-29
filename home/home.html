@@ -7,15 +7,19 @@
 
     <link rel="stylesheet" href="home.css">
     <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
-    <script defer src="home.js"></script>
+    <script type="module" src="home.js"></script>
+    <script>
+
+    </script>
 </head>
-<body onresize="reset()">
+<body>
     <!-- MOBILE MENU -->
     <div class="mobileMenu">
         <div class="mobileMenu__topSection">
             <div class="mobileMenu__topSection__title tp1">Contacts</div>
             <div class="mobileMenu__topSection__options">
                 <img 
+                    id="burgerMenu"
                     src="../assets/icons/burger.svg"
                     class="mobileMenu__topSection__options__item"
                     onclick="toggleBurgerMenu(event)">
@@ -42,9 +46,9 @@
             <div class="sidenav__topSection__title">WhatsDown</div>
             <img 
                 src="../assets/icons/exit.svg" 
+                id="logOutImage"
                 class="sidenav__topSection__exit"
-                alt="Exit"
-                onclick="logOut()">
+                alt="Exit">
         </div>
         <div class="sidenav__contacts">
             <!-- Sample structure for contacts

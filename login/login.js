@@ -1,3 +1,7 @@
+import { URLs } from "/global.js";
+
+console.log(URLs.home);
+
 // Elements
 const inputUsername = document.querySelector('.inputUsername');
 const inputPassword = document.querySelector('.inputPassword');
@@ -19,7 +23,7 @@ function main() {
     // Login logic
     btnLogin.addEventListener('click', handleLogin);
     // Go to register view
-    btnRegister.addEventListener('click', () => window.location.href = '/WhatsDownFront/register/register.html');
+    btnRegister.addEventListener('click', () => window.location.href = URLs.register);
 }
 
 function testBackend() {
@@ -48,7 +52,7 @@ function redirectIfLoggedin() {
         return response.json()
     }).then((data) => {
         if (data.message == 'success')
-            window.location.href = '/WhatsDownFront/home/home.html';
+            window.location.href = URLs.home;
         else 
             localStorage.removeItem('token');
     }).catch((error) => {
@@ -90,7 +94,7 @@ function handleLogin() {
 
         if (data.message == 'success') {
             localStorage.setItem('token', data.token);
-            document.location.href = '/WhatsDownFront/home/home.html';
+            document.location.href = URLs.home;
         } else if (data.message == 'error') {
             alert(data.content);
         }
