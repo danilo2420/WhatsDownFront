@@ -1,5 +1,5 @@
 // Change this when changing environment
-let production = false;
+let production = true;
 
 // Navigation URLs
 let URLs = null;
