@@ -1,4 +1,4 @@
-import { URLs, API_BASE_URL } from "../global.js";
+import { URLs, API_BASE_URL } from "../modules/global.js";
 
 // Elements
 const elmntBody = document.querySelector('body');
