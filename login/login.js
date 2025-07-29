@@ -50,8 +50,7 @@ function redirectIfLoggedin() {
         return response.json()
     }).then((data) => {
         if (data.message == 'success') {
-            //window.location.href = URLs.home;
-            console.log(URLs.home);
+            window.location.href = URLs.home;
         }
         else 
             localStorage.removeItem('token');
