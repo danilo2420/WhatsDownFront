@@ -10,7 +10,8 @@ const btnSendMessage = document.querySelector('.main__bottomSection__button');
 const contactName = document.querySelector('.main__topSection__contactName');
 const messageContainer = document.querySelector('.main__middleSection');
 const exitIcon = document.getElementById('logOutImage');
-const burgerMenu = document.getElementById('burgerMenu');
+const burgerMenu1 = document.getElementById('burgerMenu1');
+const burgerMenu2 = document.getElementById('burgerMenu2');
 
 const middleSection = document.querySelector('.main__middleSection');
 const welcomeView = document.querySelector('.main__middleSection__welcome');
@@ -238,7 +239,8 @@ function toggleBurgerMenu(event) {
             'none';
     }
 }
-burgerMenu.addEventListener('click', (event) => toggleBurgerMenu(event));
+burgerMenu1.addEventListener('click', (event) => toggleBurgerMenu(event));
+burgerMenu2.addEventListener('click', (event) => toggleBurgerMenu(event));
 
 function sendMessage(event) {
     if (!sendEnabled) return;
