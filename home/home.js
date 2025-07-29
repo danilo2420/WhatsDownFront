@@ -10,6 +10,7 @@ const btnSendMessage = document.querySelector('.main__bottomSection__button');
 const contactName = document.querySelector('.main__topSection__contactName');
 const messageContainer = document.querySelector('.main__middleSection');
 const exitIcon = document.getElementById('logOutImage');
+const mobileExitIcon = document.getElementById('mobileExiticon');
 const burgerMenu1 = document.getElementById('burgerMenu1');
 const burgerMenu2 = document.getElementById('burgerMenu2');
 
@@ -226,6 +227,7 @@ function logOut() {
     window.location.href = URLs.login;
 }
 exitIcon.addEventListener('click', logOut);
+mobileExitIcon.addEventListener('click', logOut);
 
 function toggleBurgerMenu(event) {
     if (!event) {
