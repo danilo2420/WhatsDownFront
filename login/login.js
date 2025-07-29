@@ -103,11 +103,13 @@ function handleLogin() {
 
 function validateInput(username, password) {
     if (username.length == 0) {
-        alert('Username cannot be blank');
+        // TODO: create snackbar here
+        // alert('Username cannot be blank');
         return false;
     }
     if (password.length == 0) {
-        alert('Password cannot be blank');
+        // TODO: create snackbar here
+        // alert('Password cannot be blank');
         return false;
     }
     return true;

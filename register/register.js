@@ -42,11 +42,13 @@ function handleSignup() {
         if (!data.message) return;
 
         if (data.message == 'success') {
-            alert('User created successfully');
+            // TODO: create snackbar here
+            // alert('User created successfully');
             passUserInfoToLogin(username, password);
             window.location.href = URLs.login;
         } else if(data.message == 'error') {
-            alert(data.content);
+            // TODO: create snackbar here
+            //alert(data.content);
         }
     }).catch((error) => {
         console.log(error);
@@ -60,11 +62,13 @@ function passUserInfoToLogin(username, password) {
 
 function validateInput(username, password, passwordConfirm) {
     if (username.length == 0 || password.length == 0 || passwordConfirm.length == 0) {
-        alert('Fields cannot be empty');
+        // TODO: create snackbar here
+        //alert('Fields cannot be empty');
         return false;
     }
     if (password != passwordConfirm) {
-        alert('Passwords do not coincide');
+        // TODO: create snackbar here
+        //alert('Passwords do not coincide');
         return false;
     }
     return true;
