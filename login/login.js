@@ -1,6 +1,4 @@
-import { URLs } from "/global.js";
-
-console.log(URLs.home);
+import { URLs, API_BASE_URL } from "/global.js";
 
 // Elements
 const inputUsername = document.querySelector('.inputUsername');
@@ -27,7 +25,7 @@ function main() {
 }
 
 function testBackend() {
-    fetch('https://whatsdownapi-production.up.railway.app/health/ping')
+    fetch(API_BASE_URL + '/health/ping')
         .then((response) => {
             return response.text()
         }).then((text) => {
@@ -40,7 +38,7 @@ function redirectIfLoggedin() {
     const token = localStorage.getItem('token');
     if (!token) return;
 
-    fetch('https://whatsdownapi-production.up.railway.app/users/checkToken', {
+    fetch(API_BASE_URL + '/users/checkToken', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -84,7 +82,7 @@ function handleLogin() {
     const headers = new Headers();
     headers.set('Authorization', 'Basic ' + btoa(username + ':' + password));
 
-    fetch('https://whatsdownapi-production.up.railway.app/users/auth', {
+    fetch(API_BASE_URL + '/users/auth', {
         method: 'POST',
         headers
     }).then((response) => {

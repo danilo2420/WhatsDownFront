@@ -1,4 +1,4 @@
-import { URLs } from "../global.js";
+import { URLs, API_BASE_URL } from "../global.js";
 
 // Elements
 const elmntBody = document.querySelector('body');
@@ -16,7 +16,7 @@ const middleSection = document.querySelector('.main__middleSection');
 const welcomeView = document.querySelector('.main__middleSection__welcome');
 
 // Variables
-const socket = io('https://whatsdownapi-production.up.railway.app');
+const socket = io(API_BASE_URL);
 const token = localStorage.getItem('token');
 let currentContact = undefined;
 
@@ -39,7 +39,7 @@ function main() {
 
 // CHECK TOKEN VALIDITY
 function checkToken() {
-    fetch('https://whatsdownapi-production.up.railway.app/users/checkToken', {
+    fetch(API_BASE_URL + '/users/checkToken', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -92,7 +92,7 @@ function listUsers() {
 }
 
 function getUsers() {
-    return fetch('https://whatsdownapi-production.up.railway.app/users/all', {
+    return fetch(API_BASE_URL + '/users/all', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -160,7 +160,7 @@ function setRoomMessagesInDOM(user) {
     messageContainer.innerHTML = '';
 
     // Get room messages
-    fetch('https://whatsdownapi-production.up.railway.app/messages/getRoomMessages', {
+    fetch(API_BASE_URL + '/messages/getRoomMessages', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

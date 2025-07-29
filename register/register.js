@@ -1,3 +1,5 @@
+import { URLs, API_BASE_URL } from "../global.js";
+
 // Elements
 const inputUsername = document.querySelector('.inputUsername');
 const inputPassword = document.querySelector('.inputPassword');
@@ -6,7 +8,6 @@ const inputPasswordConfirm = document.querySelector('.inputPasswordConfirm');
 const btnSignup = document.querySelector('.buttons__btnSignup');
 const btnGoBack = document.querySelector('.buttons__btnGoBack');
 
-
 // Variables
 
 // Functions 
@@ -14,7 +15,7 @@ function main() {
     // Handle user creation logic
     btnSignup.addEventListener('click', handleSignup);
     // Go back to login
-    btnGoBack.addEventListener('click', () => window.location.href = '/WhatsDownFront/index.html');
+    btnGoBack.addEventListener('click', () => window.location.href = URLs.login);
 }
 
 function handleSignup() {
@@ -26,7 +27,7 @@ function handleSignup() {
         return;
     }
 
-    fetch('https://whatsdownapi-production.up.railway.app/users/create', {
+    fetch(API_BASE_URL + '/users/create', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -43,7 +44,7 @@ function handleSignup() {
         if (data.message == 'success') {
             alert('User created successfully');
             passUserInfoToLogin(username, password);
-            window.location.href = '/WhatsDownFront/index.html';
+            window.location.href = URLs.login;
         } else if(data.message == 'error') {
             alert(data.content);
         }

@@ -1,16 +1,15 @@
 console.log("Running global script");
 
 // Change this when changing environment
-let production = false;
-//
+let production = true;
 
+// Navigation URLs
 let URLs = null;
-
 if (production) {
     URLs = {
-        login: "/WhatsDownFront/home.html",
+        login: "/",
         register: "/WhatsDownFront/register/register.html",
-        home: "/WhatsDownFront"
+        home: "/WhatsDownFront/home.html"
     }
 } else {
     URLs = {
@@ -20,7 +19,16 @@ if (production) {
     }
 }
 
+// API URL
+let API_BASE_URL = ''
+if (production) {
+    API_BASE_URL = 'https://whatsdownapi-production.up.railway.app';
+} else {
+    API_BASE_URL = 'http://127.0.0.1:5000';
+}
+console.log(API_BASE_URL);
 
 export {
-    URLs
+    URLs,
+    API_BASE_URL
 }
