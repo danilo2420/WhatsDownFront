@@ -5,7 +5,7 @@ let production = true;
 let URLs = null;
 if (production) {
     URLs = {
-        login: "/",
+        login: "/WhatsDownFront",
         register: "/WhatsDownFront/register/register.html",
         home: "/WhatsDownFront/home/home.html"
     }
