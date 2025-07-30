@@ -1,4 +1,4 @@
-import { URLs, API_BASE_URL } from "../modules/global.js"
+import { URLs, API_BASE_URL, socket } from "../modules/global.js"
 
 // Elements
 const inputUsername = document.querySelector('.inputUsername');

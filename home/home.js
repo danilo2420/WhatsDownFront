@@ -1,4 +1,4 @@
-import { URLs, API_BASE_URL } from "../modules/global.js";
+import { URLs, API_BASE_URL, socket } from "../modules/global.js";
 
 // Elements
 const elmntBody = document.querySelector('body');
@@ -18,7 +18,7 @@ const middleSection = document.querySelector('.main__middleSection');
 const welcomeView = document.querySelector('.main__middleSection__welcome');
 
 // Variables
-const socket = io(API_BASE_URL);
+// const socket = io(API_BASE_URL);
 const token = localStorage.getItem('token');
 let currentContact = undefined;
 

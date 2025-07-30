@@ -1,4 +1,4 @@
-import { URLs, API_BASE_URL } from "../modules/global.js";
+import { URLs, API_BASE_URL, socket } from "../modules/global.js";
 
 // Elements
 const inputUsername = document.querySelector('.inputUsername');
@@ -45,6 +45,7 @@ function handleSignup() {
             // TODO: create snackbar here
             // alert('User created successfully');
             passUserInfoToLogin(username, password);
+
             window.location.href = URLs.login;
         } else if(data.message == 'error') {
             // TODO: create snackbar here
