@@ -45,7 +45,7 @@ function handleSignup() {
             // TODO: create snackbar here
             // alert('User created successfully');
             passUserInfoToLogin(username, password);
-
+            socket.emit('user_created_client');
             window.location.href = URLs.login;
         } else if(data.message == 'error') {
             // TODO: create snackbar here

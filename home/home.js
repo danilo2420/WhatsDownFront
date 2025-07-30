@@ -84,12 +84,19 @@ function configureSocket() {
         console.log(data.message);
     });
 
+    socket.on('socket_created_server', () => {
+        console.log("An user seems to have been created");
+        // TODO: refresh user list here
+        listUsers();
+    })
+
     // This might be useful to check that the sockets are working
     // socket.on('connect', () => {});
 }
 
 // FUNCTIONS TO LIST USERS ON MENU
 function listUsers() {
+    sidenavContacts.innerHTML = "";
     getUsers().then((users) => {
         if (users) users.forEach(addUserToMenu);
     });
