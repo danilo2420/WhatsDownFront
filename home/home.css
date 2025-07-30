@@ -95,7 +95,11 @@ body {
 .main__middleSection {
     flex: 1;
     flex-basis: 0;
+
     overflow-y: scroll;
+    scrollbar-color: var(--grey700) var(--grey950);
+    scrollbar-width: thin;
+
     padding-bottom: 24px;
     padding-top: 24px;
 
@@ -227,6 +231,8 @@ body {
         gap: 12px;
 
         overflow-y: scroll;
+        scrollbar-color: var(--grey950) var(--grey700);
+        scrollbar-width: thin;
     }
 
     .sidenav__contacts__item {
