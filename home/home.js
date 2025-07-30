@@ -97,6 +97,7 @@ function configureSocket() {
 // FUNCTIONS TO LIST USERS ON MENU
 function listUsers() {
     sidenavContacts.innerHTML = "";
+    mobileMenuContacts.innerHTML = "";
     getUsers().then((users) => {
         if (users) users.forEach(addUserToMenu);
     });
