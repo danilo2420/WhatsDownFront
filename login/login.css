@@ -123,6 +123,16 @@ input {
 
     border-radius: 15px;
     background-color: var(--grey700);
+    
+    transition: all 0.2s;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+input:focus {
+    background-color: var(--grey700-hover);
 }
 
 @media (min-width: 450px) {
