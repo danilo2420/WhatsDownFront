@@ -54,6 +54,11 @@ body {
     gap: 8px;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
+
 .buttons {
     width: 100%;
 
@@ -123,7 +128,7 @@ input {
 
     border-radius: 15px;
     background-color: var(--grey700);
-    
+
     transition: all 0.2s;
 }
 

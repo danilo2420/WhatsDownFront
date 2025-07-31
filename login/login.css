@@ -54,6 +54,10 @@ body {
     gap: 8px;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .buttons {
     width: 100%;
 
