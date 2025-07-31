@@ -138,7 +138,19 @@ body {
 
 .main__middleSection__item {
     padding: 15px 24px;
+
+    animation: fadeIn 0.2s ease-in-out 0s 1;
 }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100; 
+    }
+}
+
 
 .main__middleSection__item__content {
     width: fit-content;
@@ -173,6 +185,12 @@ body {
     background-color: var(--grey700);
     padding: 12px;
     border-radius: 10px;
+
+    transition: all 0.2s;
+}
+
+.main__bottomSection__input:focus:not(.input--disabled) {
+    background-color: var(--grey700-hover);
 }
 
 .main__bottomSection__button {
@@ -185,10 +203,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    transition: all 0.2s;
 }
 
 .main__bottomSection__button__icon {
     width: 25px;
+}
+
+.main__bottomSection__button:hover:not(.button--disabled) {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: var(--grey700-hover);
 }
 
 /*** DESKTOP VERSION */
@@ -217,6 +243,11 @@ body {
     .sidenav__topSection__exit {
         width: 20px;
         cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .sidenav__topSection__exit:hover {
+        transform: scale(1.1);
     }
 
     .sidenav__contacts {
@@ -240,12 +271,14 @@ body {
         border-radius: 15px;
         background: radial-gradient(var(--gradient0), var(--gradient1));
 
-        transition: background-color 0.3s;
+        transition: all 0.3s;
     }
 
     .sidenav__contacts__item:hover,
     .sidenav__contacts__item:focus {
         background: var(--gradient-hover);
+        cursor: pointer;
+        transform: scale(1.02);
     }
 
 }
@@ -262,4 +295,5 @@ body {
 
 .button--disabled {
     opacity: 0.5;
+    cursor: default !important;
 }
