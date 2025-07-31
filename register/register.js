@@ -43,13 +43,13 @@ function handleSignup() {
 
         if (data.message == 'success') {
             // TODO: create snackbar here
-            // alert('User created successfully');
+            alert('User created successfully');
             passUserInfoToLogin(username, password);
             socket.emit('user_created_client');
             window.location.href = URLs.login;
         } else if(data.message == 'error') {
             // TODO: create snackbar here
-            //alert(data.content);
+            alert(data.content);
         }
     }).catch((error) => {
         console.log(error);
@@ -64,12 +64,12 @@ function passUserInfoToLogin(username, password) {
 function validateInput(username, password, passwordConfirm) {
     if (username.length == 0 || password.length == 0 || passwordConfirm.length == 0) {
         // TODO: create snackbar here
-        //alert('Fields cannot be empty');
+        alert('Fields cannot be empty');
         return false;
     }
     if (password != passwordConfirm) {
         // TODO: create snackbar here
-        //alert('Passwords do not coincide');
+        alert('Passwords do not coincide');
         return false;
     }
     return true;

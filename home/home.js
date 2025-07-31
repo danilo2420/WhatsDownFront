@@ -54,7 +54,7 @@ function checkToken() {
         if (data.message != 'success') {
             // If token is not valid, show message and throw user out
             // TODO: create snackbar here
-            // alert(data.message);
+            alert(data.message);
             window.location.href = URLs.login; 
         } else {
             // If token is valid, set user data in sessionStorage
@@ -66,7 +66,7 @@ function checkToken() {
     }).catch((error) => {
         // Throw user out if there's an error
         // TODO: create snackbar here
-        //alert('There was an error');
+        alert('There was an error');
         console.log(error);
         window.location.href = URLs.login;
     });
