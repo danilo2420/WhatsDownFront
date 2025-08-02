@@ -58,6 +58,7 @@ function checkToken() {
             window.location.href = URLs.login; 
         } else {
             // If token is valid, set user data in sessionStorage
+            console.log("This is the user id that our token has sent back: " + data.user_id);
             if (data.user_id)
                 sessionStorage.setItem('user_id', data.user_id);
             if (data.username)
