@@ -58,7 +58,6 @@ function checkToken() {
             window.location.href = URLs.login; 
         } else {
             // If token is valid, set user data in sessionStorage
-            console.log("This is the user id that our token has sent back: " + data.user_id);
             if (data.user_id) {
                 sessionStorage.setItem('user_id', data.user_id);
                 listUsers();
@@ -88,8 +87,7 @@ function configureSocket() {
     });
 
     socket.on('socket_created_server', () => {
-        console.log("An user seems to have been created");
-        // TODO: refresh user list here
+        // A new user has registered, so contact list has to get updated
         listUsers();
     })
 
@@ -125,8 +123,6 @@ function getUsers() {
 
 function addUserToMenu(user) {
     // We don't add our own user to the contact list
-    console.log("This is the contact's user id: " + user.id)
-    console.log("This is our user's user id: " + sessionStorage.getItem('user_id'))
     if (user.id == sessionStorage.getItem('user_id')) return;
 
     // MOBILE MENU
