@@ -122,6 +122,8 @@ function getUsers() {
 
 function addUserToMenu(user) {
     // We don't add our own user to the contact list
+    console.log("This is the contact's user id: " + user.id)
+    console.log("This is our user's user id: " + sessionStorage.getItem('user_id'))
     if (user.id == sessionStorage.getItem('user_id')) return;
 
     // MOBILE MENU
