@@ -87,7 +87,12 @@ function configureSocket() {
 
         if (data.log) {
             console.log('Log: ' + data.log);
-            return;
+            if (data.sender_id) {
+                console.log('sender id is ' + data.sender_id);
+            }
+            if (data.message) {
+                console.log('message is ' + data.message);
+            }   
         }
         if (data.sender_id) {
             console.log('sender id is ' + data.sender_id);
