@@ -233,6 +233,7 @@ elmntBody.addEventListener('resize', reset);
 
 function logOut() {
     localStorage.removeItem('token');
+    socket.emit('leave_all_rooms');
     window.location.href = URLs.login;
 }
 exitIcon.addEventListener('click', logOut);
