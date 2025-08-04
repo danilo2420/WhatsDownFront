@@ -84,11 +84,16 @@ function configureSocket() {
     // Log message sent from server
     socket.on('log', (data) => {
         // console.log(data.message);
+
+        if (data.log) {
+            console.log('Log: ' + data.log);
+            return;
+        }
         if (data.sender_id) {
             console.log('sender id is ' + data.sender_id);
         }
         if (data.message) {
-            console.log('message is ' + data.sender_id);
+            console.log('message is ' + data.message);
         }
     });
 
